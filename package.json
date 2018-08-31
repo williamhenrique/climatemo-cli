@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "climatempo": "bin/main.js"
+  },
   "scripts": {
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch"
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch",
+    "build": "./node_modules/.bin/babel --out-dir bin src"
   },
   "repository": {
     "type": "git",
@@ -19,6 +24,7 @@
   },
   "homepage": "https://github.com/williamhenrique/climatemo-cli#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "chai": "^4.1.2",
     "mocha": "^5.2.0"
   },
